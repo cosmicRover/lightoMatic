@@ -7,3 +7,4 @@ class BulbModel:
         self.ip = ip
         self.port = port
         self.status = status
+
