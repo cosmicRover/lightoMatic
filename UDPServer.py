@@ -1,8 +1,9 @@
 import socket
 
+
 def Main():
-    host = '127.0.0.1'
-    port = 5000
+    host = '192.168.1.6'
+    port = 1234
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind((host, port))
@@ -11,11 +12,11 @@ def Main():
     while True:
         data, addr = s.recvfrom(1024)
         print("message from: " + str(addr))
-        print ("message from connected user: " + str(data))
+        print("message from connected user: " + str(data))
 
         data = str(data).upper()
         print("sending: " + str(data))
-        s.sendto(bytes(data, 'utf8'), addr)
+        s.sendto(bytes(data, 'utf-8'), addr)
     s.close()
 
 
